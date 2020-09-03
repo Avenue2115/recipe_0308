@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RecipeSummariesSeeder::class);
         $this->call(RecipeMaterialsSeeder::class);
         $this->call(RecipeStepsSeeder::class);
+        $this->call(MasterFoodGroupSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }

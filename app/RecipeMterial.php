@@ -6,13 +6,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\RecipeSummary;
+use App\MasterFood;
 /**
  * App\RecipeMaterial
  *
  * @property int $id
- * @property int $recipe_id
- * @property int $food_id
+ * @property int $recipe_summary_id
+ * @property int $master_foods_id
  * @property float $food_amount_to_use
  * @property string $food_unit
  * @property string $create_date
@@ -37,4 +38,18 @@ class RecipeMaterial extends Model
 {
     //対象テーブルを指定する
     protected $table = 'recipe_materials';
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function recipeSummary(){
+        return $this->belongsTo(RecipeSummary::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function food(){
+        return $this->hasOne(MasterFood::class, 'id', 'master_foods_id');
+    }
 }

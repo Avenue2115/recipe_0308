@@ -1,8 +1,8 @@
 <?php
 /**
  * レシピ概要マスタマイグレーションファイル
- * 
- * 
+ *
+ *
  */
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -37,5 +37,6 @@ class CreateRecipesummariesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('recipe_summaries');
+
     }
 }

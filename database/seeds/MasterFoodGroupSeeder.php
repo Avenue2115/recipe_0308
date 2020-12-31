@@ -15,7 +15,6 @@ class MasterFoodGroupSeeder extends Seeder
         DB::table('master_food_group')->truncate();
 
         //データ準備
-        //Todo:食品群名を明記する
         $foodGroups = [
             [
                 'food_group_id' => 1,

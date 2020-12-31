@@ -1,8 +1,8 @@
 <?php
 /**
  * レシピの手順テーブルマイグレーションファイル
- * 
- * 
+ *
+ *
  */
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,7 +19,7 @@ class CreateRecipeStepsTable extends Migration
     {
         Schema::create('recipe_steps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('recipe_id')->constrained('recipe_summaries');
+            $table->foreignId('recipe_summary_id')->constrained('recipe_summaries');
             $table->integer('number_of_steps')->unsigned();
             $table->text('text_of_steps');
             $table->dateTime('create_date');

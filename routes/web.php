@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-   return redirect('/food');
+   //return redirect('/food');
+   return redirect('/RecipeSummary');
 });
 
 Route::resource('food', 'FoodController');
+Route::resource("MasterFoodGroup", 'MasterFoodGroupController');
+Route::get('RecipeSummary','RecipeListController@index');
+Route::get('RecipeSummary/{id}','RecipeListController@search');
 
 /*
  Route::get('/', function () {

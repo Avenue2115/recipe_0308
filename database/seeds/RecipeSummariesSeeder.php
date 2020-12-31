@@ -31,6 +31,14 @@ class RecipeSummariesSeeder extends Seeder
                 "comment" => "テスト用のレシピ",
                 'create_date'=> new DateTime(),
                 'update_date'=> new DateTime()
+            ],
+            [
+                "title" => "青椒肉絲",
+                "description" => "一般的な青椒肉絲のレシピ",
+                "total_energy"=> 163,
+                "comment" => "テスト用のレシピ",
+                'create_date'=> new DateTime(),
+                'update_date'=> new DateTime()
             ]
         ];
         //登録実行

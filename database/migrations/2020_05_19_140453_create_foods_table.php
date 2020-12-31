@@ -5,8 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 /**
  * 食品マスタマイグレーションファイル
- * 
- * 
+ *
+ *
  */
 class CreateFoodsTable extends Migration
 {

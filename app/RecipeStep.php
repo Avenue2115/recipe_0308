@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\RecipeSummary;
 
 /**
  * App\RecipeStep
  *
  * @property int $id
- * @property int $recipe_id
+ * @property int $recipe_summary_id
  * @property int $number_of_steps
  * @property string $text_of_steps
  * @property string $create_date
@@ -32,4 +33,13 @@ class RecipeStep extends Model
 {
     //対象テーブルを指定する
     protected $table = 'recipe_steps';
+    protected $primaryKey = 'id';
+
+    /**
+     * レシピ概要
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function recipeSummary(){
+        return $this->belongsTo(RecipeSummary::class);
+    }
 }

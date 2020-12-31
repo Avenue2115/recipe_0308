@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\MasterFood;
 
 /**
  * App\MasterFoodGroup
@@ -29,4 +30,12 @@ class MasterFoodGroup extends Model
     //対象テーブルを指定する
     protected $primaryKey = 'food_group_id';
     protected $table = 'master_food_group';
+
+    /**
+     * 食品
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function food(){
+        return $this->hasOne(MasterFood::class, "food_group_id");
+    }
 }

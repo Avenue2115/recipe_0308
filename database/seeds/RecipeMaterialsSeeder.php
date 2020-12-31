@@ -16,8 +16,8 @@ class RecipeMaterialsSeeder extends Seeder
 
         $recipe_materials = [
             [
-                'recipe_id' => 1,
-                'food_id' => 1,
+                'recipe_summary_id' => 1,
+                'master_foods_id' => 1,
                 'food_unit' => '本',
                 'food_amount_to_use' => 0.5,
                 'create_date'=> new DateTime(),

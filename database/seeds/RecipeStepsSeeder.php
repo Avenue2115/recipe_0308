@@ -16,7 +16,7 @@ class RecipeStepsSeeder extends Seeder
 
         $recipe_steps = [
             [
-                'recipe_id' => 1,
+                'recipe_summary_id' => 1,
                 'number_of_steps' => 1,
                 'text_of_steps' => 'テスト用のテキスト',
                 'create_date'=> new DateTime(),

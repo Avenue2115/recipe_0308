@@ -23,7 +23,7 @@
         @endif
         @foreach($foods as $food)
             <div class="row">
-                <div class="col-4">{{ optional($food)->id }}</div>
+                <div class="col-4">・{{ optional($food)->id }}</div>
                 <div class="col-lg-8">{{ optional($food)->food_name  }}</div>
             </div>
         @endforeach
@@ -36,7 +36,7 @@
         @endif
         @foreach($steps as $step)
             <div class="row">
-                <div class="col-4">{{ optional($step) -> id }}</div>
+                <div class="col-4">・{{ optional($step) -> id }}</div>
                 <div class="col-lg-8">{{ optional($step)->text_of_steps }}</div>
             </div>
         @endforeach

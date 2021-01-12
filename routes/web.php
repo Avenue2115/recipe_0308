@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::resource('food', 'FoodController');
 Route::resource("MasterFoodGroup", 'MasterFoodGroupController');
 Route::get('RecipeSummary','RecipeListController@index');
-Route::get('RecipeSummary/{id}','RecipeListController@search');
+Route::get('RecipeSummary/{id}','RecipeListController@details');
 
 /*
  Route::get('/', function () {

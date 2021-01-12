@@ -29,7 +29,7 @@ class RecipeListController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function search($id){
+    public function details($id){
         try{
             //\DB::enableQueryLog();
             $recipeSummary=RecipeSummary::findOrFail($id);

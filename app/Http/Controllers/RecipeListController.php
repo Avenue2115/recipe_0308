@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\RecipeSummary;
-use App\RecipeStep;
+use Illuminate\View\View;
 use phpDocumentor\Reflection\Types\Integer;
 
 class RecipeListController extends Controller
 {
     /**
      * 初回アクセス時処理
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function index(){
 
@@ -19,15 +21,25 @@ class RecipeListController extends Controller
                                         ->take(10)
                                         ->get();
 
+        //サービスコンテナを使ってモデルクラスのDIを実現
+        $modalDetail = app()->make(
+            'ModelDetail',
+            [
+                'id' => 'exampleModal',
+                'title' => 'title',
+                'body' => 'body',
+                'postUrl'=> '#'
+            ]
+        );
+
         //レシピ概要最大10を画面に返却
-        return view('recipelist/index', ["recipeSummaries" => $recipeSummaries]);
+        return view('recipelist/index', ["recipeSummaries" => $recipeSummaries, "modelDetail" => $modalDetail]);
     }
 
     /**
      * レシピ詳細画面表示処理
-     * @param Request $request
      * @param $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function details($id){
         try{

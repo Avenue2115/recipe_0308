@@ -1,4 +1,4 @@
-@extends('food/common')
+@extends('.base')
 @section('content')
 <div class="container ops-main">
   <div class="row">

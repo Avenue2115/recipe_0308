@@ -1,4 +1,4 @@
-@extends('food/common')
+@extends('.base')
 @section('content')
     <div class="container ops-main">
         <div class="row">
@@ -16,5 +16,13 @@
                 @endforeach
             </div>
         </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <x-modal-form :modalDetail="$modelDetail" />
 
 @endsection

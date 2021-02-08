@@ -1,4 +1,4 @@
-@extends('MasterFoodGroup/common')
+@extends('.base')
 @section('content')
 <div class="container ops-main">
   <div class="row">
@@ -39,7 +39,13 @@
         </tr>
         @endforeach
       </table>
-      <div><a href="/MasterFoodGroup/create" class="btn btn-default">新規作成</a></div>
+        <div class="container">
+            <div class="row">
+                <div><a href="/MasterFoodGroup/create" class="btn btn-default">新規作成</a></div>
+                <div class="col-auto"><a href="/RecipeSummary" class="btn btn-primary">レシピ</a></div>
+            </div>
+        </div>
+
     </div>
   </div>
 @endsection

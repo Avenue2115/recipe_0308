@@ -22,17 +22,18 @@ class RecipeListController extends Controller
 
         $form = $formBuilder->create(\App\Forms\FoodForm::class, [
             'method' => 'POST',
-            'url' => route('food.create')
+            'url' => route('food.store'),
+            'id' => 'foodForm'
         ]) ;
 
         //サービスコンテナを使ってモデルクラスのDIを実現
         $modalDetail = app()->make(
             'ModelDetail',
             [
-                'id' => 'exampleModal',
+                'modalId' => 'exampleModal',
                 'title' => 'Food',
                 'body' => $form,
-                'postUrl'=> '#'
+                'formId'=> 'foodForm'
             ]
         );
 

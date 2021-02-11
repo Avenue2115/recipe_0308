@@ -15,6 +15,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         $this->app->bind('ModelDetail', \App\models\classes\ModalDetail::class);
+        $this->app->bind('DateTime', function ($app) {
+            return new \DateTime();
+        });
     }
 
     /**

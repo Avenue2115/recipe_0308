@@ -2,46 +2,37 @@
 
 namespace App\models\classes;
 
+use Kris\LaravelFormBuilder\Form;
+use App\Forms\FoodForm;
 
 class ModalDetail
 {
     /** @var string */
-    public $id;
+    public $modalId;
     /** @var string */
     public $title;
-    /** @var string */
+    /** @var Form */
     public $body;
     /** @var string */
-    public $postUrl;
+    public $formId;
 
     /**
      * ModalDetail constructor.
-     * @param string $id
+     * Formを受け取ってそのまま渡す。
+     * @param string $modalId
      * @param string $title
-     * @param string $body
-     * @param string $postUrl
+     * @param Form $body
+     * @param string $formId
      */
     public function __construct(
-        string $id,
+        string $modalId,
         string $title,
-        string $body,
-        string $postUrl)
+        Form $body,
+        string $formId)
     {
-        $this->id= $id;
+        $this->modalId= $modalId;
         $this->title= $title;
         $this->body= $body;
-        $this->postUrl= $postUrl;
-    }
-
-    /**
-     * @param string ...$properties
-     */
-    public function makeBody(string ...$properties){
-        //TODO:modal画面のボディ部分を作成するための関数を作りたい。
-        $htmlTag = '';
-        foreach ($properties as $property){
-            $htmlTag = $htmlTag.$property;
-        }
-        $this->body = $htmlTag;
+        $this->formId= $formId;
     }
 }

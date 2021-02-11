@@ -23,7 +23,7 @@ class FoodController extends Controller
   {
     // DBよりURIパラメータと同じIDを持つfoodの情報を取得
     $food = Food::findOrFail($id);
-    
+
       // food/editに渡す
     return view('food/edit', compact('food'));
   }
@@ -64,11 +64,12 @@ class FoodController extends Controller
     {
         $food = new Food();
         $food->name = $request->name;
-        $food->energy = $request->enerrgy;
+        $food->energy = $request->energy;
         $food->protein = $request->protein;
         $food->lipid = $request->lipid;
         $food->carbohydrate = $request->carbohydrate;
         $food->salt_equivalent = $request->salt_equivalent;
+        $food->create_date = app()->make('DateTime');
         $food->save();
 
         return redirect("/food");

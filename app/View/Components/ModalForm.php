@@ -10,13 +10,13 @@ use Kris\LaravelFormBuilder\Form;
 class ModalForm extends Component
 {
     /** @var string */
-    public $id;
+    public $modalId;
     /** @var string */
     public $title;
     /** @var Form */
     public $body;
     /** @var string */
-    public $postUrl;
+    public $formId;
 
     /**
      * Create a new component instance.
@@ -25,10 +25,10 @@ class ModalForm extends Component
      */
     public function __construct(ModalDetail $modalDetail)
     {
-        $this->id = $modalDetail->id;
+        $this->modalId = $modalDetail->modalId;
         $this->title = $modalDetail->title;
         $this->body = $modalDetail->body;
-        $this->postUrl = $modalDetail->postUrl;
+        $this->formId = $modalDetail->formId;
     }
 
     /**

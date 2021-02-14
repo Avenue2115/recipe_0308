@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 *testしたいときは php artisan testを入力
 *
 */
@@ -24,9 +24,9 @@ class RecipeListTest extends TestCase
         $response = $this->get('/recipelist');
         $response->assertStatus(200);
 
-        //トップページにはタイトルとして'Recipe'が見えること
+        //トップページにはタイトルとして'RecipeForm'が見えること
         //これはBrowserTestの方に移動する予定
         $this->visit('/recipelist')
-                ->see('Recipe');
+                ->see('RecipeForm');
     }
 }

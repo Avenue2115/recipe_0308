@@ -3,8 +3,11 @@
 namespace App\models\classes;
 
 use Kris\LaravelFormBuilder\Form;
-use App\Forms\FoodForm;
 
+/**
+ * Class ModalDetail
+ * @package App\models\classes
+ */
 class ModalDetail
 {
     /** @var string */

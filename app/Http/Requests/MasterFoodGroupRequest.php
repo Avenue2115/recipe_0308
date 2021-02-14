@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRecipeRequest extends FormRequest
+class MasterFoodGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreateRecipeRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,7 +24,9 @@ class CreateRecipeRequest extends FormRequest
     public function rules()
     {
         return [
-
+            'food_group_name' => 'required|string',
+            'create_date'=> new DateTime(),
+            'update_date'=> 'nullable'
         ];
     }
 }

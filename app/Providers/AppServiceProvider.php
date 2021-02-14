@@ -18,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('DateTime', function ($app) {
             return new \DateTime();
         });
+        $this->app->bind('RecipeSummary', App\RecipeSummary::class);
+        $this->app->bind('RecipeMaterial', App\RecipeMaterial::class);
+        $this->app->bind('RecipeSteps', App\RecipeSteps::class);
     }
 
     /**

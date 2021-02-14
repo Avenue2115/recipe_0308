@@ -38,6 +38,11 @@ class RecipeMaterial extends Model
 {
     //対象テーブルを指定する
     protected $table = 'recipe_materials';
+    protected $fillable = [
+        'master_foods_id',
+        'food_amount_to_use',
+        'food_unit'
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

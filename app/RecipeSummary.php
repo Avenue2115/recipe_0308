@@ -40,12 +40,17 @@ class RecipeSummary extends Model
 {
     //対象テーブルを指定する
     protected $table = 'recipe_summaries';
+    protected $fillable = [
+        'number_of_steps',
+        'text_of_steps'
+    ];
 
     /**
      * 材料を取得
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function recipeMaterials(){
+    public function recipeMaterials()
+    {
         return $this->hasMany(RecipeMaterial::class);
     }
 
@@ -53,7 +58,8 @@ class RecipeSummary extends Model
      * 説明を取得
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function recipeSteps(){
+    public function recipeSteps()
+    {
         return $this->hasMany(RecipeStep::class);
         //, 'recipe_steps.recipe_summary_id', 'recipe_summaries.id'
     }
@@ -64,7 +70,8 @@ class RecipeSummary extends Model
      * @return RecipeSummary|RecipeSummary[]|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|Model|null
      *
      */
-    public function searchByTittle(String $tittle) {
+    public function searchByTittle(String $tittle)
+    {
         return RecipeSummary::where("tittle", $tittle)->get();
     }
 
@@ -73,7 +80,8 @@ class RecipeSummary extends Model
      * @param String $material
      * @return mixed
      */
-    public function searchByMaterial(String $material) {
+    public function searchByMaterial(String $material)
+    {
         return RecipeSummary::join("recipe_materials", "recipe_summaries.id" , "=", "recipe_materials.recipe_id")
             ->join("foods","recipe_summaries.food_id","=","foods.id")
             ->where("foods.name", $material)

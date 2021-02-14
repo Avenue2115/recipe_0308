@@ -10,8 +10,8 @@ class RecipeSummaryForm extends Form
     {
         $this
             ->add('title', 'text')
-            ->add('description', 'textarea')
+            ->add('description', 'textarea', ['attr' => ['size' => '30x5']])
             ->add('total_energy', 'text')
-            ->add('comment', 'textarea');
+            ->add('comment', 'textarea', ['attr' => ['size' => '30x5']]);
     }
 }

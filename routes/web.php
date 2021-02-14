@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::resource('food', 'FoodController');
 Route::resource("MasterFoodGroup", 'MasterFoodGroupController');
+Route::resource('recipe', 'RecipeController');
 Route::get('RecipeSummary','RecipeListController@index');
 Route::get('RecipeSummary/{id}','RecipeListController@details');
 
